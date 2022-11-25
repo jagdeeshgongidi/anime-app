@@ -2,7 +2,7 @@ import React from 'react'
 import WatchCard from '../components/WatchCard';
 import useWatchList from '../components/hooks/UseWatchlist';
 const WatchList = () => {
-    const [watchList,setWatchList]=useWatchList();
+    const [watchList]=useWatchList();
 
 
   return (

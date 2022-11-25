@@ -3,8 +3,6 @@ import axios from 'axios';
 import { MainContent } from './Maincontent';
 import Sidebar from './SideBar';
 import Spinner from '../components/Spinner';
-import Button from '../components/modal/Button';
-import Modal, { ModalBody, ModalFooter, ModalHeader } from '../components/modal/Modal';
 const Home = () => {
     const [loading, setLoading] = useState(false)
     const [animeList, setAnimeList] = useState([]);
