@@ -421,6 +421,7 @@ a:hover {
   padding-top: 30px;
   margin-left: 20px;
   float: left;
+  overflow: scroll;
  
   p{
     overflow-wrap: break-word;
@@ -430,6 +431,9 @@ a:hover {
 .avatars {
   margin-top: 23px;
  position: absolute;;
+}
+.app{
+  min-height: 100vh;
 }
 
 //star rating stuff via: https://codepen.io/jamesbarnett/pen/vlpkh/

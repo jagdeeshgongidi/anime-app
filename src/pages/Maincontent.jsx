@@ -92,7 +92,6 @@ export const MainContent = (props) => {
                     />
                  ))
            }
-           
         </div>
     </main>
   )

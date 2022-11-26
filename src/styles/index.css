@@ -362,6 +362,7 @@ a:hover {
   padding-top: 30px;
   margin-left: 20px;
   float: left;
+  overflow: scroll;
 }
 .column2 p {
   overflow-wrap: break-word;
@@ -370,6 +371,10 @@ a:hover {
 .avatars {
   margin-top: 23px;
   position: absolute;
+}
+
+.app {
+  min-height: 100vh;
 }
 
 fieldset, label {
