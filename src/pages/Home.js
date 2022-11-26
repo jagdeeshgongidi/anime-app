@@ -68,7 +68,7 @@ const Home = () => {
         })
     }
     const prevPage = () => {
-        scrollTop()
+        scrollTop();
         setCurrentPage(prev => {
             if (prev === 1) {
                 return prev
@@ -104,18 +104,18 @@ const Home = () => {
                 {
                     loading ?
                 <div className="pageBtns">
-                        <button onClick={nextPage} disabled={!pageInfo.has_next_page}>
-                            next
-                        </button>
-                        <p>page:{currentPage}/{pageInfo.last_visible_page}</p>
                     <button onClick={prevPage} disabled={currentPage === 1} >
                         Prev
                     </button>
+                <p>{" "+currentPage+" "}of{" "+pageInfo.last_visible_page}</p>
+                    <button onClick={nextPage} disabled={!pageInfo.has_next_page}>
+                            next
+                        </button>
                     <br></br>
                 </div>
                  :null
                 }
-               <p style={{textAlign:'center'}}>@jagadeeshGongidi</p>
+               <p style={{textAlign:'center',color:"white"}}>@jagadeeshGongidi</p>
             </footer>
 
         </div>

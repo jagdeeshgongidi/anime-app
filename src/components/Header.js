@@ -45,11 +45,8 @@ const Header = () => {
                         menuOpen && size.width < 768 ? classes.isMenu : ""
                     }`}
                 >
-                    <ul>  
-                        <li>
+                   
                           <Link datacount={watchList.length} className="watch" to="/watchlist">Watchlist</Link>
-                        </li>
-                    </ul>
                 </nav>
                 <div className={classes.header__content__toggle}>
                     {!menuOpen ? (
