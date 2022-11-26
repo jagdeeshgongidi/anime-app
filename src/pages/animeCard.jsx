@@ -1,9 +1,10 @@
 import React from 'react'
+import {FiFolderPlus} from "react-icons/fi"
 import { Link } from 'react-router-dom'
 const AnimeCard = ({ title, score, rating, image, id, add, status }) => {
     return (
         <div className="card">
-            <button className="add-watchList" onClick={() => add({ image, id, title, score })} > Add</button>
+            <button className="add-watchList" onClick={() => add({ image, id, title, score })} ><FiFolderPlus /> Add</button>
             <div className="img1"><img className='homeImg' src={image} alt={title} loading="lazy" /></div>
             <div className="title">{title}</div>
             <div className="text">{status}</div>

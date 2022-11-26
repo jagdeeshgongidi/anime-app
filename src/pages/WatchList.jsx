@@ -1,6 +1,7 @@
 import React from 'react'
 import WatchCard from '../components/WatchCard';
 import useWatchList from '../components/hooks/UseWatchlist';
+import { Link } from 'react-router-dom';
 const WatchList = () => {
     const [watchList,setWatchList]=useWatchList();
     const deleteWatchList=(id) =>{
@@ -12,7 +13,7 @@ const WatchList = () => {
   return (
     <div className='animeList'>
        {
-        watchList?.map((each,index) => <WatchCard onDelete={deleteWatchList} key={index} id={each.id} title={each.title} image={each.image} score={each.score} />)
+        watchList.length>0?watchList?.map((each,index) => <WatchCard onDelete={deleteWatchList} key={index} id={each.id} title={each.title} image={each.image} score={each.score} />):<div><h2>Add some anime to binge watch</h2><Link className="n-buttons" to="/">Home</Link></div>
        }
     </div>  
   )
