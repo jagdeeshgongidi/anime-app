@@ -32,15 +32,18 @@ export const AnimeInfo = () => {
                 loading ?
                     <div className="movie-card">
                         <div className="container">
-                            <iframe className="cover" width="290" height="215" src={animeData.trailer.embed_url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        {
+                            animeData.trailer.embed_url ? <iframe className="cover" width="290" height="215" src={animeData.trailer.embed_url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>:<span className='cover trailer'>Trailer not avalible</span>
+                        }
                             <div className="hero" style={{backgroundImage:`url(${animeData.images.jpg.large_image_url})`,backgroundSize:"cover"}}>
                                 <div className="details">
                                     <div className="title1">{animeData.title} </div>
+                                    <div className="genre">{animeData.aired.string?animeData.aired.string:""} </div>
                                     <div className="title2">
                                             <span className='title'>{animeData.rating?(animeData.rating).split(" ").join("").slice(0,5):"..."}</span>
                                             <span className='title'>{animeData.score?animeData.score:0}</span>
-                                            <span className='title'>{"❤️"+animeData.favorites?animeData.favorites:0}</span>
-                                            <span className='title'>Rank{" "+animeData.rank?animeData.rank:0}</span>
+                                            <span className='title'>{animeData.favorites?"❤️"+animeData.favorites:0}</span>
+                                            <span className='title'>Rank{animeData.rank?" "+animeData.rank:0}</span>
                                     </div> 
                                     {
                                         animeData?.genres?.map((genre,index)=>{

@@ -348,6 +348,18 @@ a:hover {
   z-index: 2;
 }
 
+.trailer{
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  font-size: 24px;
+  z-index: 2;
+  line-height: 1.4;
+ max-width: 150px;
+ color:red;
+ font-weight: 900;
+ border: 1px solid red;
+}
 .details {
   position: absolute;
   top:100px;
@@ -355,12 +367,16 @@ a:hover {
   
   .title1 {
     color: white;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     margin-bottom: 13px;
     position: relative;
-    max-width: 450px;
     overflow-wrap: break-word;
+    background: #C4AF3D;
+    border-radius: 5px; 
+    padding: 10px 14px;
+    width: fit-content;
+    
   }
 
   .title2{
@@ -374,12 +390,16 @@ a:hover {
       font-size: 14px;
       font-weight: 900;
       padding: 0px 4px;
+
+      margin-left:10px;
+      margin-bottom: 10px;
     }
   }
   .genre{
-    margin-right:20px;
     color:#EEE;
     font-weight: 700;
+    margin: 10px 10px;
+
   }
   
 
