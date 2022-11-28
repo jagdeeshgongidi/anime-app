@@ -4,7 +4,6 @@ import { MainContent } from './Maincontent';
 import Spinner from '../components/Spinner';
 import PageNation from '../components/PageNation';
 import TopContent from './Topcontent';
-import Footer from '../components/Footer';
 const Home = () => {
     const [loading, setLoading] = useState(false)
     const [animeList, setAnimeList] = useState([]);
@@ -90,13 +89,10 @@ const Home = () => {
                 <div className="pageBtns">
                     <PageNation pageInfo={pageInfo} currentPage={currentPage} prevPage={prevPage}  nextPage={nextPage} />
                 </div>
-
-
-               
                  :null
                 }
             </footer>
-                <Footer />
+
         </div>
 
     )

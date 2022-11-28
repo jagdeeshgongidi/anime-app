@@ -16,6 +16,7 @@ a {
 
 .app {
   min-height: 100vh;
+  position: relative;
 }
 
 a:hover {
@@ -442,6 +443,7 @@ section {
 .movie-slide {
   background: #fff;
   color: #000;
+  
   margin: auto;
   max-width: 90vw;
   overflow: hidden;
@@ -528,14 +530,17 @@ input[type="text"] {
   border-radius: 12px;
   cursor: pointer;
 }
+
 .footer-distributed {
+  position: relative;
+  bottom: 0;
   background: #252525;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
-  padding: 55px 50px;
+  padding: 30px 50px;
   position: relative;
 }
 
@@ -552,7 +557,6 @@ input[type="text"] {
 /* The company logo */
 .footer-distributed h3 {
   color: #ffffff;
-  font: normal 36px 'Open Sans', cursive;
   margin: 0;
 }
 .footer-distributed h3 span {

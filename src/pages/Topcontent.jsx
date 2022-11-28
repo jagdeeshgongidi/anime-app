@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const TopContent = ({topAnime}) => {
     return (
         <section>
@@ -12,11 +12,15 @@ const TopContent = ({topAnime}) => {
                 {
                     topAnime.map((anime,index) => {
                         return (
-                                <div key={index} className="movie-info">
+                                <div key={index} id={anime.mal_id} className="movie-info">
+                                <Link  to={`anime/${anime.mal_id}`}>
                                     <img alt="movie poster" src={anime.images.jpg.large_image_url} />
                                         <div className="movie-name">{anime.title}</div>
                                     <div className="review">❤️{anime.score}/10 </div>
+                                    </Link>
                                 </div>
+                              
+                                
                         )
                     })
                 }

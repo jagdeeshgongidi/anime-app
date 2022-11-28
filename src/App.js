@@ -20,7 +20,8 @@ function App() {
                 <Route path="/search/:id" element={<SearchResults />} />
                 <Route path="*" element={<Notfound />} />
             </Routes>
-        </div>
+            <Footer />
+        </div>  
     );
 }
 
