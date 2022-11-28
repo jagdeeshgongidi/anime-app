@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { MainContent } from './Maincontent';
-import Sidebar from './SideBar';
 import Spinner from '../components/Spinner';
+import PageNation from '../components/PageNation';
+import TopContent from './Topcontent';
+import Footer from '../components/Footer';
 const Home = () => {
     const [loading, setLoading] = useState(false)
     const [animeList, setAnimeList] = useState([]);
-    const [search, setSearch] = useState("");
     const [topAnime, setTopAnime] = useState([])
     const [pageInfo, setPageInfo] = useState({})
     const [currentPage, setCurrentPage] = useState(1);
-    const [genre,setGenre]=useState('');
-
     useEffect(() => {
         let isMounted = true;
         const fetchData = async () => {
             try {
-                const AnimeData = await axios.get(`https://api.jikan.moe/v4/anime?filter=${genre}&limit=12&sfw=true&sort=asc&page=${currentPage}`);
+                const AnimeData = await axios.get(`https://api.jikan.moe/v4/anime?filter=${''}&limit=12&sfw=true&sort=asc&page=${currentPage}`);
                 isMounted &&setAnimeList(AnimeData.data.data)
                 setPageInfo(AnimeData.data.pagination)
             } catch (err) {
@@ -27,7 +26,7 @@ const Home = () => {
         return () => {
             isMounted = false;
         }
-    }, [currentPage,genre])
+    }, [currentPage])
 
     useEffect(() => {
         let isMounted=true
@@ -46,20 +45,7 @@ const Home = () => {
         }
     }
     ,[])
-    const handleSearch = (e) => {
-        e.preventDefault();
-        const searchQuery = async () => {
-            try {
-                const searchResult = await axios.get(`https://api.jikan.moe/v4/anime?q=${search}&sfw=true&order_by=popularity&sort=asc&limit=10&page=${currentPage}&genre=${genre}`);
-                setAnimeList(searchResult.data.data)
-                setPageInfo(searchResult.data.pagination)
-                setLoading(true)
-            } catch (err) {
-                console.log(err)
-            }
-        }
-        searchQuery()
-    }
+   
 
     const nextPage = () => {
         scrollTop();
@@ -85,18 +71,16 @@ const Home = () => {
     return (
         <div className="">
             <div className='content-wrap'>
-                {loading ? <> 
-                <Sidebar topAnime={topAnime} />
-                <MainContent
-                        animeList={animeList}
-                        search={search}
-                        setSearch={setSearch}
-                        handleSearch={handleSearch}
-                        setGenre={setGenre}
-                    >
-                    </MainContent>
+                {loading ? 
+                <> 
+                {
+                    currentPage ===1?
+                    <> <TopContent  topAnime={topAnime} />
+                    <MainContent animeList={animeList} /></>
+                    :<MainContent animeList={animeList} />
+                }
                 </>
-                    : <Spinner />
+                : <Spinner />
                 }
 
             </div>
@@ -104,20 +88,15 @@ const Home = () => {
                 {
                     loading ?
                 <div className="pageBtns">
-                    <button onClick={prevPage} disabled={currentPage === 1} >
-                        Prev
-                    </button>
-                <p>{" "+currentPage+" "}of{" "+pageInfo.last_visible_page}</p>
-                    <button onClick={nextPage} disabled={!pageInfo.has_next_page}>
-                            next
-                        </button>
-                    <br></br>
+                    <PageNation pageInfo={pageInfo} currentPage={currentPage} prevPage={prevPage}  nextPage={nextPage} />
                 </div>
+
+
+               
                  :null
                 }
-               <p style={{textAlign:'center',color:"white"}}>@jagadeeshGongidi</p>
             </footer>
-
+                <Footer />
         </div>
 
     )

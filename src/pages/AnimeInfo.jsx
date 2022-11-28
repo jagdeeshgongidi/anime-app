@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from '../components/Spinner';
 export const AnimeInfo = () => {
@@ -22,50 +22,35 @@ export const AnimeInfo = () => {
         return () => {
             isMounted = false
         }
-
-
     }, [params.id])
     return (
-        <div className="anime-info">
-
+        <article className="info">
             {
                 loading ?
-                    <div className="movie-card">
-                        <div className="container">
-                        {
-                            animeData.trailer.embed_url ? <iframe className="cover" width="290" height="215" src={animeData.trailer.embed_url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>:<span className='cover trailer'>Trailer not avalible</span>
-                        }
-                            <div className="hero" style={{backgroundImage:`url(${animeData.images.jpg.large_image_url})`,backgroundSize:"cover"}}>
-                                <div className="details">
-                                    <div className="title1">{animeData.title} </div>
-                                    <div className="genre">{animeData.aired.string?animeData.aired.string:""} </div>
-                                    <div className="title2">
-                                            <span className='title'>{animeData.rating?(animeData.rating).split(" ").join("").slice(0,5):"..."}</span>
-                                            <span className='title'>{animeData.score?animeData.score:0}</span>
-                                            <span className='title'>{animeData.favorites?"❤️"+animeData.favorites:0}</span>
-                                            <span className='title'>Rank{animeData.rank?" "+animeData.rank:0}</span>
-                                    </div> 
-                                    {
-                                        animeData?.genres?.map((genre,index)=>{
-                                            return <span className='genre' key={index}>{genre.name}</span>
-                                        })
-                                    }
-                                </div>
+                    <div>
+                        <div className="details">
+                            <img className="d-img"  src={animeData.images.jpg.large_image_url} alt={animeData.title} />
+                                <div className="details-data">
+                                    <h1 className="a-title">{animeData?.title}</h1>
+                                    <span>{animeData?.year}</span>
+                                    <h3>{animeData?.rating}</h3>
+                                    <h3>rank:{" "+animeData?.rank}</h3>
+                                    <h3>❤️{animeData.popularity}</h3>
+                                    <h3>{animeData?.genres?.map((genre) => genre?.name+" ")}</h3>
+                                    <h3>aired:{" "+animeData?.aired?.string}</h3>
+                                    
+                                </div>  
                             </div>
-                            <div className="description">
-                                <div className="column2">
-                                    <p>{animeData.synopsis}</p>
-                                    <div className="avatars">
-                                       
-                                    </div>
-                                </div>
-                            </div> 
+                        <div className="trailer">
+                            <iframe src={animeData?.trailer?.embed_url} title="YouTube video player" frameBorder="0" allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        </div>        
+                            <div className="i-text">
+                            <span>Synopsis :</span>{animeData?.synopsis}
                         </div>
-                    </div>
-
-                    : <Spinner />
-
+                    </div> : <Spinner />
             }
-        </div>
+
+        </article>
+
     )
 }

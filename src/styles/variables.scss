@@ -7,7 +7,7 @@ $dark: rgb(29, 29, 29);
 $light: #fff;
 $primary: rgb(162, 162, 246);
 $bg: rgb(244, 244, 255);
-
+$bg-color:#1D1D1D;
 // spacing
 $spacing-md: 16px;
 $spacing-lg: 32px;
@@ -26,3 +26,7 @@ $headerHeight: 60px;
         }
     }
 }
+
+$spinner: rgb(255, 235, 233);
+$background:#1D1D1D;;
+$size: 30px;
