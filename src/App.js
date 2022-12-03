@@ -18,6 +18,7 @@ function App() {
                 <Route path="/watchlist/anime/:id" element={<AnimeInfo />} />
                 <Route path="/search/:id" element={<SearchResults />} />
                 <Route path="/filter/:list" element={<FilterResults />} />
+                <Route path="filter/:list/anime/:id" element={<AnimeInfo />} />
                 <Route path="*" element={<Notfound />} />
             </Routes>
         </Layout>

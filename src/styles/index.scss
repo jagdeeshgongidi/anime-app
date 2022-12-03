@@ -385,11 +385,14 @@ h1,p,h3,span {
   width: 237px;
   height: 347px;
 }
+
+
+
 .details {
-  position: absolute;
-  top: 40px;
-  left: 80px;
-  right: 40px;
+  position: relative;
+  margin-top: 40px;
+  margin-left: 80px;
+  margin-right: 40px;
 }
 .details-data {
   position: absolute;
@@ -398,29 +401,27 @@ h1,p,h3,span {
   width: 40vw;
 }
 .a-title {
-  font-size: 3.4rem;
+  font-size: 2.5rem;
   display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 .trailer {
   margin-top: 40px;
-  position: absolute;
-  left: 80px;
-  top: 400px;
-  right: 40px;
+  position: relative;
+  margin-left: 80px;
+  margin-right: 40px;
 }
 iframe {
   width: 90vw;
   height: 90vh;
+  
 }
 .i-text {
-  position: absolute;
-  top: 155vh;
+  position: relative; 
   width: 90vw;
-  left: 80px;
+  margin-left: 80px;
   max-height: fit-content;
+  overflow-wrap: break-word;
 }
 /* top contnet */
 ::selection {
@@ -560,4 +561,43 @@ Multiselect{
 }
 .highlightOption{
   color:#000;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .details {
+    position: relative;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .a-title{
+    font-size: 1.2rem;
+  }
+  .d-img {
+    margin:0 auto;
+    width: 237px;
+    height: 347px;
+    text-align: center;
+  }
+  iframe{
+    width:100%;
+    height:100%;
+    
+  }
+  .details-data {
+    position: relative;
+    width: 80%;
+    left: 0;
+    margin:0 auto;
+  }
+  .i-text {
+    font-size: 15px;
+    position: relative; 
+    width: 90%;
+    margin-left: 80px;
+    max-height: fit-content;
+    overflow-wrap: break-word;
+  }
 }
