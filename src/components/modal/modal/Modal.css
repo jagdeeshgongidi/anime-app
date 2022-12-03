@@ -2,13 +2,13 @@
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  z-index: 4;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #252525;
+  background-color: rgba(0, 0, 0, 0.4);
   transition: 0.3s ease-in-out;
 }
 .modal.active {
@@ -18,7 +18,7 @@
 .modal__content {
   width: 500px;
   margin: 15% auto;
-  background-color: #fff;
+  background-color: #1D1D1D;
   border-radius: 5px;
   position: relative;
   transition: inherit;
@@ -44,4 +44,4 @@
 }
 .modal__close:hover {
   color: #000;
-}/*# sourceMappingURL=modal.css.map */
+}/*# sourceMappingURL=Modal.css.map */

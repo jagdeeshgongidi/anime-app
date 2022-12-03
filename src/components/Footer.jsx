@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "../components/modal/Footer.scss"
 import {FiFacebook,FiLinkedin,FiGithub,FiTwitter} from "react-icons/fi";
 const DATE=new Date().getFullYear()
 const Footer = () => {

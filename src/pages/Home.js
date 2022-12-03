@@ -4,6 +4,7 @@ import { MainContent } from './Maincontent';
 import Spinner from '../components/Spinner';
 import PageNation from '../components/PageNation';
 import TopContent from './Topcontent';
+
 const Home = () => {
     const [loading, setLoading] = useState(false)
     const [animeList, setAnimeList] = useState([]);
@@ -31,7 +32,7 @@ const Home = () => {
         let isMounted=true
         const fetchTopAnime = async () => {
             try {
-                const topAnimeData = await axios.get('https://api.jikan.moe/v4/top/anime?order_by=bypopularity&limit=10');
+                const topAnimeData = await axios.get('https://api.jikan.moe/v4/top/anime?order_by=bypopularity&limit=12');
                 isMounted && setTopAnime(topAnimeData.data.data)
                 setLoading(true)
             } catch (err) {
@@ -45,7 +46,7 @@ const Home = () => {
     }
     ,[])
    
-
+    
     const nextPage = () => {
         scrollTop();
         setCurrentPage(prev => {
@@ -68,22 +69,27 @@ const Home = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })
     }
     return (
-        <div className="">
+        <>
             <div className='content-wrap'>
                 {loading ? 
                 <> 
                 {
                     currentPage ===1?
-                    <> <TopContent  topAnime={topAnime} />
-                    <MainContent animeList={animeList} /></>
-                    :<MainContent animeList={animeList} />
+                    <> 
+                    <TopContent  topAnime={topAnime} />
+
+                    <MainContent animeList={animeList} />
+                    </>
+                    :
+                    <>
+                    
+                    <MainContent animeList={animeList} />
+            </>
                 }
                 </>
                 : <Spinner />
                 }
-
-            </div>
-            <footer>
+                <footer>
                 {
                     loading ?
                 <div className="pageBtns">
@@ -93,7 +99,9 @@ const Home = () => {
                 }
             </footer>
 
-        </div>
+            </div>
+           
+        </>
 
     )
 }

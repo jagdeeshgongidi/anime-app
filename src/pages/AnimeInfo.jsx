@@ -27,27 +27,27 @@ export const AnimeInfo = () => {
         <article className="info">
             {
                 loading ?
-                    <div>
+                    <>
                         <div className="details">
-                            <img className="d-img"  src={animeData.images.jpg.large_image_url} alt={animeData.title} />
-                                <div className="details-data">
-                                    <h1 className="a-title">{animeData?.title}</h1>
-                                    <span>{animeData?.year}</span>
-                                    <h3>{animeData?.rating}</h3>
-                                    <h3>rank:{" "+animeData?.rank}</h3>
-                                    <h3>❤️{animeData.popularity}</h3>
-                                    <h3>{animeData?.genres?.map((genre) => genre?.name+" ")}</h3>
-                                    <h3>aired:{" "+animeData?.aired?.string}</h3>
-                                    
-                                </div>  
+                            <img className="d-img" src={animeData.images.jpg.large_image_url} alt={animeData.title} />
+                            <div className="details-data">
+                                <h1 className="a-title">{animeData?.title}</h1>
+                                <span>{animeData?.year}</span>
+                                <h3>{animeData?.rating}</h3>
+                                <h3>rank:{" " + animeData?.rank}</h3>
+                                <h3>❤️{animeData.popularity}</h3>
+                                <h3>{animeData?.genres?.map((genre) => genre?.name + " ")}</h3>
+                                <h3>aired:{" " + animeData?.aired?.string}</h3>
                             </div>
+                        </div>
                         <div className="trailer">
                             <iframe src={animeData?.trailer?.embed_url} title="YouTube video player" frameBorder="0" allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        </div>        
-                            <div className="i-text">
+                        </div>
+                        <div className="i-text">
                             <span>Synopsis :</span>{animeData?.synopsis}
                         </div>
-                    </div> : <Spinner />
+                    </> 
+                    : <Spinner />
             }
 
         </article>

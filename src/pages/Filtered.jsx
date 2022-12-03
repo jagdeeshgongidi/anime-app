@@ -4,13 +4,10 @@ import axios from 'axios';
 import { MainContent } from './Maincontent';
 import Spinner from '../components/Spinner';
 import PageNation from '../components/PageNation';
-const SearchResults = () => {
+const FilterResults = () => {
   const params=useParams();
-  let query=params.id
-  console.log(query)
-  // console.log(query.includes("&&filters"))
-  // const filters=query.slice(0,query?.indexOf("&"))
-  // console.log(filters)
+  let genres=params.list
+  console.log(genres)
   const [loading,setLoading]=useState(false);
   const [AnimeList,setAnimeList]=useState([])
   const [currentPage,setCurrentPage]=useState(1);
@@ -19,7 +16,7 @@ const SearchResults = () => {
     let isMounted=true
     const searchQuery = async () => {
         try {
-            const searchResult = await axios.get(`https://api.jikan.moe/v4/anime?q=${query}&sfw=true&order_by=popularity&sort=asc&limit=12&page=${currentPage}`);
+            const searchResult = await axios.get(`https://api.jikan.moe/v4/top/anime?genres=${genres}&limit=12&page=${currentPage}`);
             isMounted&&setAnimeList(searchResult.data.data)
             setPageInfo(searchResult.data.pagination)
             setLoading(true)
@@ -32,7 +29,7 @@ const SearchResults = () => {
     return () =>{
       isMounted=false
     }
-  }, [currentPage,query])
+  }, [currentPage,genres])
 
 
 
@@ -76,4 +73,4 @@ const scrollTop = () => {
   )
 }
 
-export default SearchResults
+export default FilterResults
