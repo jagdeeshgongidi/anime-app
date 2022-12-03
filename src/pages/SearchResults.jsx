@@ -7,10 +7,6 @@ import PageNation from '../components/PageNation';
 const SearchResults = () => {
   const params=useParams();
   let query=params.id
-  console.log(query)
-  // console.log(query.includes("&&filters"))
-  // const filters=query.slice(0,query?.indexOf("&"))
-  // console.log(filters)
   const [loading,setLoading]=useState(false);
   const [AnimeList,setAnimeList]=useState([])
   const [currentPage,setCurrentPage]=useState(1);

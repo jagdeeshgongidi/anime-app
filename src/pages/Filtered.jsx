@@ -7,7 +7,7 @@ import PageNation from '../components/PageNation';
 const FilterResults = () => {
   const params=useParams();
   let genres=params.list
-  console.log(genres)
+
   const [loading,setLoading]=useState(false);
   const [AnimeList,setAnimeList]=useState([])
   const [currentPage,setCurrentPage]=useState(1);

@@ -38,7 +38,6 @@ export const MainContent = (props) => {
 
       const arr=[]
       const selectedData=(e)=>{
-      console.log(e)
       e.forEach(genres => {
         arr.push(genres.genre)
       });
@@ -46,7 +45,7 @@ export const MainContent = (props) => {
 
       const navigateToSearch=() =>{
         const arr2=[...new Set(arr)]
-        console.log(arr2)
+       
         let filters=arr2.join(",")
         navigate(`/filter/${filters}`)
       }
