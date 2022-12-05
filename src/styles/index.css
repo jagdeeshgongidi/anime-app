@@ -449,12 +449,13 @@ h1, p, h3, span {
 
 iframe {
   width: 90vw;
-  height: 90vh;
+  height: 80vh;
 }
 
 .i-text {
   position: relative;
   width: 90vw;
+  font-size: 22px;
   margin-left: 80px;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
@@ -640,8 +641,14 @@ Multiselect .option {
   .d-img {
     margin: 0 auto;
     width: 237px;
-    height: 347px;
+    height: 300px;
     text-align: center;
+  }
+  .trailer {
+    margin-top: 40px;
+    position: relative;
+    margin: 20px 14px 0 14px;
+    height: 350px;
   }
   iframe {
     width: 100%;
@@ -649,7 +656,8 @@ Multiselect .option {
   }
   .details-data {
     position: relative;
-    width: 80%;
+    font-size: 13px;
+    width: 50%;
     left: 0;
     margin: 0 auto;
   }
@@ -657,7 +665,7 @@ Multiselect .option {
     font-size: 15px;
     position: relative;
     width: 90%;
-    margin-left: 80px;
+    margin: 0 20px;
     max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
