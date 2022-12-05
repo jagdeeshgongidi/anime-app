@@ -623,6 +623,10 @@ Multiselect .option {
   color: #000;
 }
 
+.modalBtn {
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 768px) {
   .details {
     position: relative;

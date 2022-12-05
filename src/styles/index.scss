@@ -549,7 +549,6 @@ input[type="text"] {
 
 
 Multiselect{
-  
   .option{
     background-color: #000;
     color:#FFF;
@@ -561,6 +560,10 @@ Multiselect{
 }
 .highlightOption{
   color:#000;
+}
+
+.modalBtn{
+  margin: 0 auto;
 }
 
 
@@ -584,7 +587,7 @@ Multiselect{
   iframe{
     width:100%;
     height:100%;
-    
+
   }
   .details-data {
     position: relative;
