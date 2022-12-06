@@ -1,6 +1,8 @@
 {
     "cSpell.ignoreWords": [
         "datacount",
+        "dataref",
+        "toastify",
         "watchlist"
     ]
 }

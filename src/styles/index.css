@@ -79,31 +79,10 @@ h6 {
 }
 .content-wrap main .anime-list {
   display: flex;
-  margin: 32px -8px 0px;
+  margin: 0 -8px 0px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.pageBtns {
-  display: flex;
-  justify-content: center;
-  color: rgb(255, 255, 255);
-  gap: 14px;
-  padding: 10px 15px;
-}
-.pageBtns button {
-  width: 70px;
-  height: 40px;
-  border-radius: 13px;
-  font-size: 20px;
-}
-.pageBtns button:hover {
-  border: 2px solid yellow;
-}
-.pageBtns p {
-  padding-top: 12px;
-  color: #EEE;
 }
 
 .add-watchList {
@@ -114,7 +93,7 @@ h6 {
   border-radius: 10px;
   color: white;
   position: absolute;
-  border: 2px solid white;
+  border: 3px solid white;
   top: 4px;
   right: 3px;
   z-index: 2;
@@ -126,7 +105,8 @@ h6 {
 }
 
 .watch {
-  border: 1px solid white;
+  border: 1px solid #5da93c;
+  color: #5da93c;
   position: relative;
   padding: 5px 15px;
   margin: 10px 20px;
@@ -297,7 +277,7 @@ ul .clicked {
   transition: all 0.5s ease-in-out;
 }
 
-.card .title {
+.card .title-text {
   height: 22%;
   width: 100%;
   font-size: 20px;
@@ -411,7 +391,10 @@ article {
   overflow: scroll;
 }
 
-h1, p, h3, span {
+h1,
+p,
+h3,
+span {
   color: #FAFAFA;
 }
 
@@ -592,8 +575,8 @@ input[type=text] {
 
 #search {
   background-color: #1D1D1D;
-  color: #FFF;
-  border: 1px solid white;
+  color: #5da93c;
+  border: 1px solid #5da93c;
   height: 40px;
   width: 70px;
   border-radius: 12px;
@@ -610,22 +593,106 @@ input[type=text] {
   cursor: pointer;
 }
 
-Multiselect .option {
-  background-color: #000;
-  color: #FFF;
+.searchWrapper {
+  border-radius: 12px;
+  margin: 12px;
 }
 
-.option {
-  background-color: #000;
-  color: #FFF;
+.multiSelectContainer input[type=text] {
+  color: red;
+}
+.multiSelectContainer .searchBox {
+  width: 100%;
+  color: #5da93c;
+}
+.multiSelectContainer .chips {
+  background: red;
+}
+.multiSelectContainer .optionContainer {
+  border: 2px solid;
+  background-color: #1D1D1D;
+  border: 1px solid #5da93c;
+}
+.multiSelectContainer .option {
+  color: rgb(0, 0, 0);
+  background-color: #5da93c;
+  font-size: 20px;
+  border-radius: 12px;
+  padding: 0 80px;
+  width: 90%;
+  margin: 5px 5%;
+}
+.multiSelectContainer .chip {
+  background-color: #5da93c;
+  font-size: 19px;
+  border-radius: 10px;
 }
 
-.highlightOption {
-  color: #000;
+.Modal .filter-btn {
+  position: relative;
+  left: 1.5rem;
+  width: 90px;
+  cursor: pointer;
+  outline: none;
+  padding: 0.2rem 1.25rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #1D1D1D;
+  color: #5da93c;
+  border: 3px solid #5da93c;
+  transition: 0.3s ease all;
+  border-radius: 12px;
 }
 
-.modalBtn {
-  margin: 0 auto;
+.filter {
+  width: 90px;
+  cursor: pointer;
+  outline: none;
+  padding: 0.2rem 1.25rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #1D1D1D;
+  color: #5da93c;
+  border: 3px solid #5da93c;
+  transition: 0.3s ease all;
+  border-radius: 12px;
+}
+
+.pageBtns {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  gap: 14px;
+  padding: 10px 15px;
+}
+.pageBtns button {
+  height: 40px;
+  border-radius: 13px;
+  font-size: 20px;
+  width: 90px;
+  cursor: pointer;
+  outline: none;
+  padding: 0.2rem 1.25rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #1D1D1D;
+  color: #5da93c;
+  border: 3px solid #5da93c;
+  transition: 0.3s ease all;
+  border-radius: 12px;
+  padding: 0 0;
+  width: 90px;
+}
+.pageBtns button:hover {
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
+}
+.pageBtns p {
+  padding-top: 12px;
+  color: #EEE;
 }
 
 @media only screen and (max-width: 768px) {
@@ -634,6 +701,11 @@ Multiselect .option {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
+  }
+  .Modal .filter-btn {
+    position: relative;
+    left: 18rem;
+    margin-bottom: 0;
   }
   .a-title {
     font-size: 1.2rem;
