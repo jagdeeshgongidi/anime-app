@@ -15,7 +15,7 @@ const Home = () => {
         let isMounted = true;
         const fetchData = async () => {
             try {
-                const AnimeData = await axios.get(`https://api.jikan.moe/v4/anime?filter=${''}&limit=12&sfw=true&sort=asc&page=${currentPage}`);
+                const AnimeData = await axios.get(`https://api.jikan.moe/v4/anime?limit=12&sfw=true&sort=asc&page=${currentPage}`);
                 isMounted &&setAnimeList(AnimeData.data.data)
                 setPageInfo(AnimeData.data.pagination)
             } catch (err) {
